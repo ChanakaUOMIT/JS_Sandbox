@@ -54,18 +54,54 @@
 
 //const greeting;
 
-const person ={
-    name:'Chanaka',
-    age: 24 
+// const person ={
+//     name:'Chanaka',
+//     age: 24 
+// }
+
+// person.name="AladinLabs";
+
+// console.log(person);
+
+// const num=[1,2,3,4,5];
+// num.push(6);
+
+// //const num=[1,2,3,4,5, 6]; //cannot
+
+// console.log(num);
+
+const name='Chanaka';
+const age=24;
+const job='Web Developer';
+const city='NUgegoda';
+let html;
+
+//without temmplate string (es5)
+html= '<ul><li>Name : '+name+'</li><li>Age : '+age+'</li><li>Job : '+job+'</li><li>City : '+city+'</li></ul>';
+
+html= '<ul>'+
+        '<li>Name : '+name+'</li>'+
+        '<li>Age : '+age+'</li>'+
+        '<li>Job : '+job+'</li>'+
+        '<li>City : '+city+'</li>'+
+    '</ul>';
+
+function hello(){
+    return 'hello';
 }
 
-person.name="AladinLabs";
+//with template String (es6)
+html=`
+    <ul>
+        <li>Name : ${name} </li>
+        <li>Age : ${age} </li>
+        <li>Job : ${job}</li>
+        <li>City : ${city} </li>
+        <li>${2+2} </li>
+        <li>${hello()} </li>
+        <li>${age>30? 'Over 30' : 'Under 30'} </li>
+    </ul>
+    `
 
-console.log(person);
 
-const num=[1,2,3,4,5];
-num.push(6);
-
-//const num=[1,2,3,4,5, 6]; //cannot
-
-console.log(num);
+document.body.innerHTML = html;
